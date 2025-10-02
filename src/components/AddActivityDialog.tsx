@@ -14,7 +14,7 @@ interface AddActivityDialogProps {
 
 export const AddActivityDialog = ({ open, onOpenChange }: AddActivityDialogProps) => {
   const [activityType, setActivityType] = useState("treino");
-  const [locationType, setLocationType] = useState("piscina");
+  const [swimType, setSwimType] = useState("piscina");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,7 +50,7 @@ export const AddActivityDialog = ({ open, onOpenChange }: AddActivityDialogProps
           {/* Local da Natação */}
           <div className="space-y-3">
             <Label>Local</Label>
-            <RadioGroup value={locationType} onValueChange={setLocationType} className="flex gap-4">
+            <RadioGroup value={swimType} onValueChange={setSwimType} className="flex gap-4">
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="piscina" id="piscina" />
                 <Label htmlFor="piscina">Piscina</Label>

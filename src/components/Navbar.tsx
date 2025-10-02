@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Shell, Home, Calendar, Trophy, Users, User } from "lucide-react";
+import { Waves, Home, Calendar, Trophy, Users, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Navbar = () => {
@@ -9,10 +9,10 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 font-bold text-xl">
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <Shell className="h-5 w-5 text-white" />
+              <Waves className="h-5 w-5 text-white" />
             </div>
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Marola
+              SwimTrack
             </span>
           </Link>
 

@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { BottomNav } from "@/components/BottomNav";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Trophy, Zap, Target, Timer } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -20,88 +21,88 @@ const Recordes = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
       <Navbar />
       
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent flex items-center gap-3">
-            <Trophy className="h-8 w-8 text-primary" />
+      <main className="container mx-auto px-4 py-4 md:py-8 max-w-4xl">
+        <div className="mb-6 md:mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent flex items-center gap-2 md:gap-3">
+            <Trophy className="h-6 w-6 md:h-8 md:w-8 text-primary" />
             Recordes Pessoais
           </h1>
-          <p className="text-muted-foreground mt-1">Suas melhores marcas</p>
+          <p className="text-sm md:text-base text-muted-foreground mt-1">Suas melhores marcas</p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3 mb-8">
+        <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-3 mb-6 md:mb-8">
           <Card className="hover:shadow-[var(--shadow-elevated)] transition-all">
-            <CardContent className="pt-6">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded-full bg-primary/10">
-                  <Zap className="h-5 w-5 text-primary" />
+            <CardContent className="pt-4 md:pt-6">
+              <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                <div className="p-1.5 md:p-2 rounded-full bg-primary/10">
+                  <Zap className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                 </div>
-                <span className="text-sm text-muted-foreground">Ritmo Mais Rápido</span>
+                <span className="text-xs md:text-sm text-muted-foreground">Ritmo Mais Rápido</span>
               </div>
-              <p className="text-2xl font-bold">1:15 min/100m</p>
-              <p className="text-xs text-muted-foreground mt-1">Piscina • 15/12/2024</p>
+              <p className="text-xl md:text-2xl font-bold">1:15 min/100m</p>
+              <p className="text-[10px] md:text-xs text-muted-foreground mt-1">Piscina • 15/12/2024</p>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-[var(--shadow-elevated)] transition-all">
-            <CardContent className="pt-6">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded-full bg-secondary/10">
-                  <Target className="h-5 w-5 text-secondary" />
+            <CardContent className="pt-4 md:pt-6">
+              <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                <div className="p-1.5 md:p-2 rounded-full bg-secondary/10">
+                  <Target className="h-4 w-4 md:h-5 md:w-5 text-secondary" />
                 </div>
-                <span className="text-sm text-muted-foreground">Maior Distância</span>
+                <span className="text-xs md:text-sm text-muted-foreground">Maior Distância</span>
               </div>
-              <p className="text-2xl font-bold">5.0 km</p>
-              <p className="text-xs text-muted-foreground mt-1">Águas Abertas • 10/11/2024</p>
+              <p className="text-xl md:text-2xl font-bold">5.0 km</p>
+              <p className="text-[10px] md:text-xs text-muted-foreground mt-1">Águas Abertas • 10/11/2024</p>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-[var(--shadow-elevated)] transition-all">
-            <CardContent className="pt-6">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded-full bg-accent/10">
-                  <Timer className="h-5 w-5 text-accent" />
+            <CardContent className="pt-4 md:pt-6">
+              <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                <div className="p-1.5 md:p-2 rounded-full bg-accent/10">
+                  <Timer className="h-4 w-4 md:h-5 md:w-5 text-accent" />
                 </div>
-                <span className="text-sm text-muted-foreground">Maior Duração</span>
+                <span className="text-xs md:text-sm text-muted-foreground">Maior Duração</span>
               </div>
-              <p className="text-2xl font-bold">2h 15min</p>
-              <p className="text-xs text-muted-foreground mt-1">Águas Abertas • 10/11/2024</p>
+              <p className="text-xl md:text-2xl font-bold">2h 15min</p>
+              <p className="text-[10px] md:text-xs text-muted-foreground mt-1">Águas Abertas • 10/11/2024</p>
             </CardContent>
           </Card>
         </div>
 
         <Tabs defaultValue="piscina" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-6">
-            <TabsTrigger value="piscina">Piscina</TabsTrigger>
-            <TabsTrigger value="aguas-abertas">Águas Abertas</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-2 mb-4 md:mb-6">
+            <TabsTrigger value="piscina" className="text-xs md:text-sm">Piscina</TabsTrigger>
+            <TabsTrigger value="aguas-abertas" className="text-xs md:text-sm">Águas Abertas</TabsTrigger>
           </TabsList>
           
           <TabsContent value="piscina">
             <Card>
               <CardHeader>
-                <CardTitle>Melhores Tempos - Piscina</CardTitle>
+                <CardTitle className="text-base md:text-lg">Melhores Tempos - Piscina</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                   {recordesPiscina.map((recorde, index) => (
                     <div 
                       key={index}
-                      className="flex items-center justify-between p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors"
+                      className="flex items-center justify-between p-3 md:p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors"
                     >
-                      <div className="flex items-center gap-4">
-                        <Badge variant="outline" className="text-base">
+                      <div className="flex items-center gap-3 md:gap-4">
+                        <Badge variant="outline" className="text-sm md:text-base">
                           {recorde.distancia}
                         </Badge>
                         <div>
-                          <p className="font-bold text-xl">{recorde.tempo}</p>
-                          <p className="text-xs text-muted-foreground">{recorde.data}</p>
+                          <p className="font-bold text-base md:text-xl">{recorde.tempo}</p>
+                          <p className="text-[10px] md:text-xs text-muted-foreground">{recorde.data}</p>
                         </div>
                       </div>
                       {index === 0 && (
-                        <Trophy className="h-5 w-5 text-primary" />
+                        <Trophy className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                       )}
                     </div>
                   ))}
@@ -113,26 +114,26 @@ const Recordes = () => {
           <TabsContent value="aguas-abertas">
             <Card>
               <CardHeader>
-                <CardTitle>Melhores Tempos - Águas Abertas</CardTitle>
+                <CardTitle className="text-base md:text-lg">Melhores Tempos - Águas Abertas</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                   {recordesAguasAbertas.map((recorde, index) => (
                     <div 
                       key={index}
-                      className="flex items-center justify-between p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors"
+                      className="flex items-center justify-between p-3 md:p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors"
                     >
-                      <div className="flex items-center gap-4">
-                        <Badge variant="outline" className="text-base">
+                      <div className="flex items-center gap-3 md:gap-4">
+                        <Badge variant="outline" className="text-sm md:text-base">
                           {recorde.distancia}
                         </Badge>
                         <div>
-                          <p className="font-bold text-xl">{recorde.tempo}</p>
-                          <p className="text-xs text-muted-foreground">{recorde.data}</p>
+                          <p className="font-bold text-base md:text-xl">{recorde.tempo}</p>
+                          <p className="text-[10px] md:text-xs text-muted-foreground">{recorde.data}</p>
                         </div>
                       </div>
                       {index === 0 && (
-                        <Trophy className="h-5 w-5 text-secondary" />
+                        <Trophy className="h-4 w-4 md:h-5 md:w-5 text-secondary" />
                       )}
                     </div>
                   ))}
@@ -142,6 +143,8 @@ const Recordes = () => {
           </TabsContent>
         </Tabs>
       </main>
+      
+      <BottomNav />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { BottomNav } from "@/components/BottomNav";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useState } from "react";
@@ -32,15 +33,15 @@ const Calendario = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
       <Navbar />
       
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+      <main className="container mx-auto px-4 py-4 md:py-8 max-w-4xl">
+        <div className="mb-6 md:mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Calendário de Treinos
           </h1>
-          <p className="text-muted-foreground mt-1">Acompanhe sua consistência</p>
+          <p className="text-sm md:text-base text-muted-foreground mt-1">Acompanhe sua consistência</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -107,6 +108,8 @@ const Calendario = () => {
           </div>
         </div>
       </main>
+      
+      <BottomNav />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
+import { BottomNav } from "@/components/BottomNav";
 import { ActivityFeed } from "@/components/ActivityFeed";
 import { AddActivityDialog } from "@/components/AddActivityDialog";
 import { Button } from "@/components/ui/button";
@@ -9,7 +10,7 @@ const Index = () => {
   const [showAddActivity, setShowAddActivity] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
       <Navbar />
       
       <main className="container mx-auto px-4 py-4 md:py-8 max-w-4xl">
@@ -33,6 +34,8 @@ const Index = () => {
 
         <ActivityFeed />
       </main>
+
+      <BottomNav />
 
       <AddActivityDialog 
         open={showAddActivity} 

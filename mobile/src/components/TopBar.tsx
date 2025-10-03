@@ -5,7 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 // ajuste o caminho do seu CrabIcon
-import CrabIcon from "../icons/CrabIcon"; 
+// import CrabIcon from "../assets/crab"; 
 // se você já tem um tema, pode puxar dele; vou deixar as cores aqui também:
 const OCEAN = "#0B7BB3";
 const AQUA  = "#00CCC0";
@@ -60,7 +60,7 @@ export default function TopBar() {
       <View style={styles.container}>
         {/* ESQUERDA: ícone do caranguejo */}
         <View style={styles.left}>
-          <CrabIcon width={28} height={28} />
+          {/* <CrabIcon width={28} height={28} /> */}
         </View>
 
         {/* TÍTULO CENTRAL ABSOLUTO */}

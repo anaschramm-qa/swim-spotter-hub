@@ -1,33 +1,50 @@
 import React from 'react';
-import { Pressable, StyleSheet } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
-import { colors } from '../theme/colors';
-import { useRouter } from 'expo-router';
+import { TouchableOpacity, StyleSheet, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Ionicons } from '@expo/vector-icons';
 
-export default function BottomFab() {
-  const router = useRouter();
+const OCEAN = '#0B7BB3';
+const AQUA = '#00CCC0';
+
+type Props = {
+  onPress?: () => void;
+};
+
+export default function BottomFab({ onPress }: Props) {
   return (
-    <Pressable
-      onPress={() => router.push('../../(tabs)/create')}
-      style={({ pressed }) => [styles.fab, pressed && { opacity: 0.85 }]}
-      android_ripple={{ color: '#E0F7F6', borderless: true }}
+    <TouchableOpacity
+      style={styles.container}
+      activeOpacity={0.8}
+      onPress={onPress}
     >
-      <AntDesign name="plus" size={28} color="#fff" />
-    </Pressable>
+      <LinearGradient
+        colors={[OCEAN, AQUA]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.gradient}
+      >
+        <Ionicons name="add" size={32} color="#fff" />
+      </LinearGradient>
+    </TouchableOpacity>
   );
 }
+
 const styles = StyleSheet.create({
-  fab: {
+  container: {
+    top: -20, // “flutua” acima da tab bar
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  gradient: {
     width: 64,
     height: 64,
-    borderRadius: 999,
-    backgroundColor: colors.aqua,
-    alignItems: 'center',
+    borderRadius: 32,
     justifyContent: 'center',
-    marginBottom: 22,
+    alignItems: 'center',
     shadowColor: '#000',
     shadowOpacity: 0.15,
-    shadowRadius: 10,
-    elevation: 8,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 6,
   },
 });

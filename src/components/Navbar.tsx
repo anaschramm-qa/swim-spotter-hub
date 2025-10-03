@@ -1,22 +1,27 @@
 import { Link } from "react-router-dom";
 import { Waves, Home, Calendar, Trophy, Users, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { MobileNav } from "./MobileNav";
 
 export const Navbar = () => {
   return (
     <nav className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 font-bold text-xl">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <Waves className="h-5 w-5 text-white" />
-            </div>
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              SwimTrack
-            </span>
-          </Link>
+          <div className="flex items-center gap-3">
+            <MobileNav />
+            
+            <Link to="/" className="flex items-center gap-2 font-bold text-lg md:text-xl">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                <Waves className="h-5 w-5 text-white" />
+              </div>
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hidden sm:inline">
+                SwimTrack
+              </span>
+            </Link>
+          </div>
 
-          <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             <Button variant="ghost" size="sm" asChild>
               <Link to="/">
                 <Home className="h-4 w-4 mr-2" />

@@ -12,22 +12,22 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="mb-8 flex justify-between items-center">
+      <main className="container mx-auto px-4 py-4 md:py-8 max-w-4xl">
+        <div className="mb-6 md:mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Feed de Atividades
             </h1>
-            <p className="text-muted-foreground mt-1">Acompanhe seus treinos e os de seus amigos</p>
+            <p className="text-sm md:text-base text-muted-foreground mt-1">Acompanhe seus treinos e os de seus amigos</p>
           </div>
           
           <Button 
             onClick={() => setShowAddActivity(true)}
-            className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+            className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity w-full sm:w-auto"
             size="lg"
           >
-            <Plus className="mr-2 h-5 w-5" />
-            Adicionar Treino
+            <Plus className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+            <span className="text-sm md:text-base">Adicionar Treino</span>
           </Button>
         </div>
 
